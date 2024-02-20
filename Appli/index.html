@@ -27,11 +27,11 @@
                     </ul>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <img src="images/basket.png" alt="panier" class="img-fluid">
                     </div>
-                    <div class="col-6 display-2 text-center">
-                        0
+                    <div class="col-8 display-2 text-center">
+                        <span id="numberArticles">0</span>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                                 Prix: 3,95 €
                             </div>
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid"></button>
+                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(0)"></button>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 Prix: 11,90 €
                             </div>
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid"></button>
+                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(1)"></button>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                 Prix: 19,90 €
                             </div>
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid"></button>
+                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(2)"></button>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                                 Prix: 9,90 €
                             </div>
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid"></button>
+                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(3)"></button>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                                 Prix: 49,90 €
                             </div>
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid"></button>
+                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(4)"></button>
                             </div>
                         </div>
                     </div>
@@ -110,10 +110,10 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim est, lacinia malesuada massa ultrices nec. Mauris ac sollicitudin arcu. Sed magna sem, varius.
                         <div class="row">
                             <div class="col-8">
-                                Prix: 49,90 €
+                                Prix: 33,90 €
                             </div>
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid"></button>
+                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(5)"></button>
                             </div>
                         </div>
                     </div>
@@ -122,5 +122,6 @@
             </div>
         </div>
     </div>
+<script src="js/panier.js"></script>
 </body>
 </html>
