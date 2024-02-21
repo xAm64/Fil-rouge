@@ -10,14 +10,21 @@ function addToPanier(id){
 }
 //voir le panier
 function lookBasket(){
+    document.getElementById("basket").style.visibility = "visible";
     let htmlBasket = '<ul class="list-group">'+
         '<li class="list-group-item disabled">Panier</li>';
     for (let i=0;i<panier.length;i++){
         htmlBasket += '<li class="list-group-item">'+
-            panier[i].title + '. Nombre: <input type="number" min="0" id="qt'+i+'" placeholder="1"> × '+panier[i].price+
+            '<div class="form-group">'+
+                '<h3 class="text-primary">'+panier[i].title+'</h3> <p class="text-secondary">'+panier[i].shortDescription+'</p>'+
+                '<label for="number">Nombre:</label>'+
+                '<input type="number" class="form-control" min="0" id="qt'+i+'" placeholder="1">'+
+                '<label class="text-dark">Prix: '+panier[i].price+ '€</label>'+
+            '</div>'
         '</li>';
     }
-    htmlBasket += '</ul>';
+    htmlBasket += '</ul>'+
+    '<button type="button" class="btn btn-primary">Calculer</button>';
     document.getElementById("seeBasket").innerHTML = htmlBasket;
 }
 
