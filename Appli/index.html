@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,50 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
             <div class="col-3">
                 <div class="row">
+                    <!-- ceci est provisoire pour la mise en page -->
                     <ul class="list-group">
                         <li class="list-group-item disabled">Catégories</li>
-                        <a href="#"><li class="list-group-item">Lecture</li></a>
-                        <a href="#"><li class="list-group-item">Écriture</li></a>
-                        <a href="#"><li class="list-group-item">Bureautique</li></a>
-                        <a href="#"><li class="list-group-item">Image</li></a>
-                        <a href="#"><li class="list-group-item">Son</li></a>
-                        <a href="#"><li class="list-group-item">Connectique</li></a>
-                        <a href="#"><li class="list-group-item">Internet</li></a>
-                        <a href="#"><li class="list-group-item">Musique</li></a>
-                        <a href="#"><li class="list-group-item">Logiciels</li></a>
-                        <a href="#"><li class="list-group-item">Ordinateurs</li></a>
+                        <a href="#">
+                            <li class="list-group-item">Lecture</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Écriture</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Bureautique</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Image</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Son</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Connectique</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Internet</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Musique</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Logiciels</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Ordinateurs</li>
+                        </a>
                     </ul>
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <img src="images/basket.png" alt="panier" class="img-fluid">
+                        <img src="images/basket.png" alt="panier" class="img-fluid" onclick="lookBasket();">
                     </div>
                     <div class="col-8 display-2 text-center">
                         <span id="numberArticles">0</span>
@@ -37,91 +60,53 @@
             </div>
             <div class="col-9">
                 <!-- colones des articles-->
-                <div class="row">
-                    <!-- articles -->
-                    <div class="col-3">
-                        <h2>Article A</h2>
-                        <h4>Mon super article A</h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fringilla ante ut dolor venenatis, eu tristique nibh euismod. Sed semper rhoncus velit. Quisque dignissim metus. 
-                        <div class="row">
-                            <div class="col-8">
-                                Prix: 3,95 €
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(0)"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <h2>Article B</h2>
-                        <h4>Mon hyper article B</h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a libero lectus. Vestibulum eu ante condimentum, venenatis nisi non, rutrum orci. Donec interdum ac lacus. 
-                        <div class="row">
-                            <div class="col-8">
-                                Prix: 11,90 €
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(1)"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <h2>Article C</h2>
-                        <h4>L'article qu'il te faut!!!</h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie felis felis, sed volutpat mauris fringilla vel. Nam rutrum sapien in leo varius, eu pellentesque.  
-                        <div class="row">
-                            <div class="col-8">
-                                Prix: 19,90 €
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(2)"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <h2>Article D</h2>
-                        <h4>L'incroyable D</h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet diam quis sem accumsan commodo eget nec est. Nunc molestie orci ligula, quis sodales. 
-                        <div class="row">
-                            <div class="col-8">
-                                Prix: 9,90 €
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(3)"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <h2>Article E</h2>
-                        <h4>L'indispensable E</h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam accumsan ligula eu nisl sodales, ac posuere dolor volutpat. Curabitur nulla neque, iaculis a congue eget. 
-                        <div class="row">
-                            <div class="col-8">
-                                Prix: 49,90 €
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(4)"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <h2>Article F</h2>
-                        <h4>Le fou du F</h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim est, lacinia malesuada massa ultrices nec. Mauris ac sollicitudin arcu. Sed magna sem, varius.
-                        <div class="row">
-                            <div class="col-8">
-                                Prix: 33,90 €
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(5)"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin article -->
+                <div class="row" id="allArticles">
+                    <!-- Généré en JS -->
                 </div>
             </div>
         </div>
     </div>
-<script src="js/panier.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-6" id="seeBasket">
+                <!-- généré en JS -->
+            </div>
+            <div class="col-6">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Addresse</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="X rue quelque chose">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Appartement, Étage, Immeuble</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, Étage, Immeuble">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="inputCity">Ville</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Paris">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Pays</label>
+                        <input type="text" class="form-control" id="country" placeholder="France">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Code postal</label>
+                        <input type="text" class="form-control" id="inputZip" placeholder="75000">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Commander</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/article.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/panier.js"></script>
 </body>
+
 </html>
