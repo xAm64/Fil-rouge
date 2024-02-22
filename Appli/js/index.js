@@ -18,28 +18,33 @@ articles.forEach((ar) => {
 function displayAllArticles() {
     let seeAllArticles = "";
     for (let i = 0; i < articles.length; i++) {
-        seeAllArticles += '<div class="col-3" style="height:300px">' +
-            '<h2>' + articles[i].title + '</h2>' +
-            '<h4>' + articles[i].brand + '</h4>' +
-            articles[i].largeDescription +
-            '<div class="row">' +
-            '<div class="col-8">' +
-            'Prix: ' + articles[i].price +
-            '</div>' +
-            '<div class="col-4">' +
-            '<button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(' + articles[i].id + ');"></button>' +
-            '</div>' +
-            '</div>' +
-            '</div>\n';
+        seeAllArticles += 
+        '<div class="col-md-3" style="height:300px">' +
+            '<table class="table table-striped">' +
+                '<tr>'+
+                    '<th colspan="2" class="text-primary">'+ articles[i].getTitle() +'</th>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td colspan="2" class="text-secondary">'+ articles[i].getBrand() +'</td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td colspan="2">'+ articles[i].getDescription() +'</td>'+
+                '</tr>'+
+                '<tr>'+
+                    '<td>Prix: ' + articles[i].price +'</td>'+
+                    '<td><button type="button" class="btn btn-primary"><img src="images/addBasket.png" alt="ajouter au panier" class="img-fluid" onclick="addToPanier(' + articles[i].getId() + ');"></button></td>' +
+                '</tr>' +
+            '</table>'+
+        '</div>\n';
     }
     document.getElementById("allArticles").innerHTML = seeAllArticles;
 }
 
 //affiche les catégories
 function displayAllCategory() {
-    let seeAllCategory = "<a href='#' onclick='displayAllArticles();'><li class='list-group-item'>Catégories</li>";
+    let seeAllCategory = "<a href='#' class='link-primary' onclick='displayAllArticles();'><li class='list-group-item'>Catégories</li>";
     category.forEach((ct) => {
-        seeAllCategory += "<a href='#' onclick='seeArticlesOneCategory("+ ct.id +");'><li class='list-group-item'>" + ct.nom + "</li></a>";
+        seeAllCategory += "<a href='#' class='link-secondary' onclick='seeArticlesOneCategory("+ ct.id +");'><li class='list-group-item'>" + ct.nom + "</li></a>";
     });
     document.getElementById("categories").innerHTML = seeAllCategory;
 }

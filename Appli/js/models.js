@@ -8,6 +8,25 @@ class Article {
         this.price = price;
         this.category = category;
     }
+
+    getId(){
+        return this.id;
+    }
+    getName(){
+        return this.name;
+    }
+    getTitle(){
+        return this.title;
+    }
+    getBrand(){
+        return this.brand;
+    }
+    getDescription(){
+        return this.largeDescription;
+    }
+    getPrice(){
+        return this.price;
+    }
 }
 
 //catégories
@@ -22,5 +41,15 @@ class Category {
 
     addArticle(Article){
         this.Articles.push(Article);
+    }
+
+    getId(){
+        return this.id;
+    }
+    getNom(){
+        return this.nom;
+    }
+    getArticles(){
+        return this.Articles;
     }
 }

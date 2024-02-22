@@ -13,24 +13,24 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
+                <!-- Afficher le panier -->
                 <div class="row">
-                    <!-- ceci est provisoire pour la mise en page -->
+                    <div class="col-md-4">
+                        <img src="images/basket.png" alt="panier" class="img-fluid" onclick="lookBasket();">
+                    </div>
+                    <div class="col-md-8 display-2 text-center">
+                        <span id="numberArticles">0</span>
+                    </div>
+                </div>
+                <!--  Afficher les catégories -->
+                <div class="row">
                     <ul class="list-group" id="categories">
                         <!-- Généré en JS -->
                     </ul>
                 </div>
-                <div class="row">
-                    <div class="col-4">
-                        <img src="images/basket.png" alt="panier" class="img-fluid" onclick="lookBasket();">
-                    </div>
-                    <div class="col-8 display-2 text-center">
-                        <span id="numberArticles">0</span>
-                    </div>
-                </div>
             </div>
-            <div class="col-9">
-                <!-- colones des articles-->
+            <div class="col-md-9">
                 <div class="row" id="allArticles">
                     <!-- Généré en JS -->
                 </div>
@@ -39,6 +39,7 @@
     </div>
     <div class="container" id="basket">
         <div class="row">
+            <button type="button" class="btn btn-danger" onclick="document.getElementById('basket').style.visibility = 'hidden';">Fermer</button>
             <div class="col-6" id="seeBasket">
                 <!-- généré en JS -->
             </div>
@@ -70,7 +71,7 @@
                         <label for="inputZip">Code postal</label>
                         <input type="text" class="form-control" id="inputZip" placeholder="75000">
                     </div>
-                    <button type="submit" class="btn btn-primary">Commander</button><button type="button" class="btn btn-info" onclick="document.getElementById('basket').style.visibility = 'hidden';">Plus tard</button>
+                    <button type="submit" class="btn btn-primary">Commander</button>
                 </form>
             </div>
         </div>
