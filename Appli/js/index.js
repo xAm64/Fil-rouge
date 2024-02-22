@@ -44,7 +44,7 @@ function displayAllArticles() {
 function displayAllCategory() {
     let seeAllCategory = "<a href='#' class='link-primary' onclick='displayAllArticles();'><li class='list-group-item'>Catégories</li>";
     category.forEach((ct) => {
-        seeAllCategory += "<a href='#' class='link-secondary' onclick='seeArticlesOneCategory("+ ct.id +");'><li class='list-group-item'>" + ct.nom + "</li></a>";
+        seeAllCategory += "<a href='#' class='link-secondary' onclick='seeArticlesOneCategory("+ ct.getId() +");'><li class='list-group-item'>" + ct.getNom() + "</li></a>";
     });
     document.getElementById("categories").innerHTML = seeAllCategory;
 }
