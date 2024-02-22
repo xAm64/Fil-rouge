@@ -11,19 +11,20 @@ function addToPanier(id){
 //voir le panier
 function lookBasket(){
     document.getElementById("basket").style.visibility = "visible";
-    let htmlBasket = '<ul class="list-group">'+
-        '<li class="list-group-item disabled">Panier</li>';
+    let htmlBasket =
+        '<tr>'+
+            '<th>Panier</tr>'+
+        '</tr>';
     for (let i=0;i<panier.length;i++){
-        htmlBasket += '<li class="list-group-item">'+
-            '<div class="form-group">'+
-                '<h3 class="text-primary">'+panier[i].title+'</h3> <p class="text-secondary">'+panier[i].brand+'</p>'+
-                '<label for="number">Nombre:</label>'+
-                '<input type="number" class="form-control" min="0" id="qt'+i+'" placeholder="1">'+
-                '<label class="text-dark">Prix: '+panier[i].price+ '€</label>'+
-            '</div>'
-        '</li>';
+        htmlBasket +=
+        '<tr>'+
+            '<td class="text-primary">'+panier[i].getTitle()+'</td><td class="text-secondary">'+panier[i].getBrand()+'</td>'+
+        '</tr><tr>'+
+            '<td>Nombre:</td><input type="number" class="form-control" min="0" id="qt'+i+'" placeholder="1"></td>'+
+        '</tr><tr>'+
+                '<td class="text-dark">Prix: '+panier[i].price+ '€</td>'+
+        '</tr>';
     }
-    htmlBasket += '</ul>'+
     '<button type="button" class="btn btn-primary">Calculer</button>';
     document.getElementById("seeBasket").innerHTML = htmlBasket;
 }
