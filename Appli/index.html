@@ -17,37 +17,7 @@
                 <div class="row">
                     <!-- ceci est provisoire pour la mise en page -->
                     <ul class="list-group" id="categories">
-                        <li class="list-group-item disabled">Catégories</li>
-                        <a href="#">
-                            <li class="list-group-item">Lecture</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Écriture</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Bureautique</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Image</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Son</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Connectique</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Internet</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Musique</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Logiciels</li>
-                        </a>
-                        <a href="#">
-                            <li class="list-group-item">Ordinateurs</li>
-                        </a>
+                        <!-- Généré en JS -->
                     </ul>
                 </div>
                 <div class="row">
@@ -100,14 +70,15 @@
                         <label for="inputZip">Code postal</label>
                         <input type="text" class="form-control" id="inputZip" placeholder="75000">
                     </div>
-                    <button type="submit" class="btn btn-primary">Commander</button>
+                    <button type="submit" class="btn btn-primary">Commander</button><button type="button" class="btn btn-info" onclick="document.getElementById('basket').style.visibility = 'hidden';">Plus tard</button>
                 </form>
             </div>
         </div>
     </div>
-    <script src="js/article.js"></script>
+    <script src="js/models.js"></script>
     <script src="js/index.js"></script>
     <script src="js/panier.js"></script>
+    <script>loadAllElements();</script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 var panier = [];
 //ajouter un article au panier
 function addToPanier(id){
-    allArticles.forEach((el) => {
+    articles.forEach((el) => {
         if (id == el.id){
-            panier.push(new Article (el.id, el.title, el.shortDescription, el.largeDescription, el.price));
+            panier.push(new Article (el.id, el.title, el.brand, el.largeDescription, el.price, el.largeDescription));
         }
     });
     document.getElementById("numberArticles").innerText = panier.length;
@@ -16,7 +16,7 @@ function lookBasket(){
     for (let i=0;i<panier.length;i++){
         htmlBasket += '<li class="list-group-item">'+
             '<div class="form-group">'+
-                '<h3 class="text-primary">'+panier[i].title+'</h3> <p class="text-secondary">'+panier[i].shortDescription+'</p>'+
+                '<h3 class="text-primary">'+panier[i].title+'</h3> <p class="text-secondary">'+panier[i].brand+'</p>'+
                 '<label for="number">Nombre:</label>'+
                 '<input type="number" class="form-control" min="0" id="qt'+i+'" placeholder="1">'+
                 '<label class="text-dark">Prix: '+panier[i].price+ '€</label>'+
