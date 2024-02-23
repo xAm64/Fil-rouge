@@ -21,12 +21,24 @@ function lookBasket(){
             '<td class="text-secondary">'+ct.Article.getBrand()+'</td>'+
         '</tr><tr>'+
             '<td>Nombre:</td>'+
-            '<td><input type="number" class="form-control" min="0" id="panQt'+ct.getId()+'" placeholder="1" ></td>'+
+            '<td><input type="number" class="form-control" min="0" id="panQt'+ct.getId()+'" placeholder="'+ct.getQuantity()+'"></td>'+
         '</tr><tr>'+
                 '<td class="text-dark">Prix: '+ct.Article.getPrice()+ '€</td>'+
-                '<td>Sous-total: <span id="panTt'+ct.getId()+'">'+ct.Article.getPrice()+'</span></td>'+
+                '<td>Sous-total: <span id="panTt'+ct.getId()+'">'+ct.Article.getPrice()+'</span>€</td>'+
         '</tr style="border-bottom:1px solid grey">';
         });
-    '<button type="button" class="btn btn-primary">Calculer</button>';
-    document.getElementById("seeBasket").innerHTML = htmlBasket;
+        input.addEventListener('change', updatePrice());
+        document.getElementById("seeBasket").innerHTML = htmlBasket;
+    }
+    
+    //calcul prix total
+function updatePrice(){
+    let total = 0;
+    panier.forEach((pn) => {
+        total += pn.Article.getPrice() * pn.getQuantity();
+    });
+    total = total.toFixed(2);
+    document.getElementById('totalPrice').innerText = total;
 }
+
+const input = document.querySelector("input");

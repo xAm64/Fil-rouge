@@ -59,7 +59,7 @@ var panier = [];
 var idElement = 1;
 class Panier{
     constructor(Article){
-        this.idArticle = idElement;
+        this.idElement = idElement;
         idElement++;
         this.Article = Article;
         this.quantity = 1;

@@ -39,17 +39,7 @@ function displayAllArticles() {
     }
     document.getElementById("allArticles").innerHTML = seeAllArticles;
 }
-
-//affiche les catégories
-function displayAllCategory() {
-    let seeAllCategory = "<a href='#' class='link-primary' onclick='displayAllArticles();'><li class='list-group-item'>Catégories</li>";
-    category.forEach((ct) => {
-        seeAllCategory += "<a href='#' class='link-secondary' onclick='seeArticlesOneCategory("+ ct.getId() +");'><li class='list-group-item'>" + ct.getNom() + "</li></a>";
-    });
-    document.getElementById("categories").innerHTML = seeAllCategory;
-}
-
-
+//articles
 //Recherche une catégorie et dis si existe, si existe renvoie son id.
 function foundCategory(name) {
     let catId = 0;
@@ -60,12 +50,36 @@ function foundCategory(name) {
     });
     return catId;
 }
-
+//Ajoute un article à une catégorie, si elle n'existe pas la créer
+function addArticleToCategory(Article) {
+    let idCat = foundCategory(Article.category);
+    if (idCat > 0) {
+        category.forEach((ct) => {
+            if (ct.id == idCat) {
+                ct.Articles.push(Article);
+            }
+        });
+    } else {
+        let newCategory = new Category(idCategory, Article.category);
+        newCategory.addArticle(Article);
+        category.push(newCategory);
+        idCategory++;
+    }
+}
+//catégories
+//affiche les catégories
+function displayAllCategory() {
+    let seeAllCategory = "<a href='#' class='link-primary' onclick='displayAllArticles();'><li class='list-group-item'>Catégories</li>";
+    category.forEach((ct) => {
+        seeAllCategory += "<a href='#' class='link-secondary' onclick='seeArticlesOneCategory("+ ct.getId() +");'><li class='list-group-item'>" + ct.getNom() + "</li></a>";
+    });
+    document.getElementById("categories").innerHTML = seeAllCategory;
+}
 //affiche uniquement les articles de X catégorie.
-function seeArticlesOneCategory(id){
+function seeArticlesOneCategory(categoryId){
     let seeAllArticles = "";
     category.forEach((ct) => {
-        if (ct.id == id){
+        if (ct.id == categoryId){
             ct.Articles.forEach((ar) =>{
                 seeAllArticles += 
                 '<div class="col-3" style="height:300px">' +
@@ -85,23 +99,6 @@ function seeArticlesOneCategory(id){
         }
         document.getElementById("allArticles").innerHTML = seeAllArticles;
     });
-}
-
-//Ajoute un article à une catégorie, si elle n'existe pas la créer
-function addArticleToCategory(Article) {
-    let idCat = foundCategory(Article.category);
-    if (idCat > 0) {
-        category.forEach((ct) => {
-            if (ct.id == idCat) {
-                ct.Articles.push(Article);
-            }
-        });
-    } else {
-        let newCategory = new Category(idCategory, Article.category);
-        newCategory.addArticle(Article);
-        category.push(newCategory);
-        idCategory++;
-    }
 }
 
 //charge tout les éléments
