@@ -1,9 +1,8 @@
-var panier = [];
 //ajouter un article au panier
 function addToPanier(id){
     articles.forEach((el) => {
         if (id == el.id){
-            panier.push(new Article (el.id, el.title, el.brand, el.largeDescription, el.price, el.largeDescription));
+            panier.push(new Panier (el));
         }
     });
     document.getElementById("numberArticles").innerText = panier.length;
@@ -15,20 +14,19 @@ function lookBasket(){
         '<tr>'+
             '<th>Panier</tr>'+
         '</tr>';
-    for (let i=0;i<panier.length;i++){
-        htmlBasket +=
+        panier.forEach((ct) => {
+            htmlBasket +=
         '<tr>'+
-            '<td class="text-primary">'+panier[i].getTitle()+'</td><td class="text-secondary">'+panier[i].getBrand()+'</td>'+
+            '<td class="text-primary">'+ct.Article.getTitle()+'</td>'+
+            '<td class="text-secondary">'+ct.Article.getBrand()+'</td>'+
         '</tr><tr>'+
-            '<td>Nombre:</td><input type="number" class="form-control" min="0" id="qt'+i+'" placeholder="1"></td>'+
+            '<td>Nombre:</td>'+
+            '<td><input type="number" class="form-control" min="0" id="panQt'+ct.getId()+'" placeholder="1" ></td>'+
         '</tr><tr>'+
-                '<td class="text-dark">Prix: '+panier[i].price+ '€</td>'+
-        '</tr>';
-    }
+                '<td class="text-dark">Prix: '+ct.Article.getPrice()+ '€</td>'+
+                '<td>Sous-total: <span id="panTt'+ct.getId()+'">'+ct.Article.getPrice()+'</span></td>'+
+        '</tr style="border-bottom:1px solid grey">';
+        });
     '<button type="button" class="btn btn-primary">Calculer</button>';
     document.getElementById("seeBasket").innerHTML = htmlBasket;
-}
-
-function calcul(id, price){
-    return document.getElementById(id).value * price;
 }

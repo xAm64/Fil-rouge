@@ -28,7 +28,7 @@ class Article {
         return this.price;
     }
 }
-
+//j'utilise "var" volontairement car il porte partout.
 //catégories
 var category = [];
 var idCategory = 1;
@@ -51,5 +51,34 @@ class Category {
     }
     getArticles(){
         return this.Articles;
+    }
+}
+
+//panier
+var panier = [];
+var idElement = 1;
+class Panier{
+    constructor(Article){
+        this.idArticle = idElement;
+        idElement++;
+        this.Article = Article;
+        this.quantity = 1;
+    }
+
+    getId(){
+        return this.idElement;
+    }
+    getArticle(){
+        return this.Article;
+    }
+    getQuantity(){
+        return this.quantity;
+    }
+    setQuantity(quantity){
+        if (quantity >= 0){
+            this.quantity = quantity;
+        } else {
+            this.quantity = 0;
+        }
     }
 }

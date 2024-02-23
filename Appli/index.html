@@ -38,13 +38,13 @@
         </div>
     </div>
     <div class="container" id="basket">
-        <button type="button" class="btn btn-danger"
-            onclick="document.getElementById('basket').style.visibility = 'hidden';">Fermer</button>
+        <button type="button" class="btn btn-danger" onclick="document.getElementById('basket').style.visibility = 'hidden';">Fermer</button>
+        <hr>
         <table class="table table-striped">
             <thead id="seeBasket">
                 <!-- généré en JS -->
             </thead>
-            <tbody>
+            <tbody style="border-top: 2px solid black;">
                 <tr>
                     <td>
                         <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
@@ -72,6 +72,7 @@
                 </tr>
             </tbody>
         </table>
+        <hr>
         <button type="submit" class="btn btn-primary">Commander</button>
     </div>
     <script src="js/models.js"></script>
