@@ -1,8 +1,8 @@
 //ajouter un article au panier
-function addToPanier(id){
-    articles.forEach((el) => {
-        if (id == el.id){
-            panier.push(new Panier (el));
+function addToPanier(idArticle){
+    articles.forEach((elements) => {
+        if (idArticle == elements.id){
+            panier.push(new Panier (elements));
         }
     });
     document.getElementById("numberArticles").innerText = panier.length;
@@ -14,17 +14,17 @@ function lookBasket(){
         '<tr>'+
             '<th>Panier</tr>'+
         '</tr>';
-        panier.forEach((ct) => {
+        panier.forEach((ctgr) => {
             htmlBasket +=
         '<tr>'+
-            '<td class="text-primary">'+ct.Article.getTitle()+'</td>'+
-            '<td class="text-secondary">'+ct.Article.getBrand()+'</td>'+
+            '<td class="text-primary">'+ctgr.Article.getTitle()+'</td>'+
+            '<td class="text-secondary">'+ctgr.Article.getBrand()+'</td>'+
         '</tr><tr>'+
             '<td>Nombre:</td>'+
-            '<td><input type="number" class="form-control" min="0" id="panQt'+ct.getId()+'" placeholder="'+ct.getQuantity()+'"></td>'+
+            '<td><input type="number" class="form-control" min="0" id="panQt'+ctgr.getId()+'" placeholder="'+ctgr.getQuantity()+'"></td>'+
         '</tr><tr>'+
-                '<td class="text-dark">Prix: '+ct.Article.getPrice()+ '€</td>'+
-                '<td>Sous-total: <span id="panTt'+ct.getId()+'">'+ct.Article.getPrice()+'</span>€</td>'+
+                '<td class="text-dark">Prix: '+ctgr.Article.getPrice()+ '€</td>'+
+                '<td>Sous-total: <span id="panTt'+ctgr.getId()+'">'+ctgr.Article.getPrice()+'</span>€</td>'+
         '</tr style="border-bottom:1px solid grey">';
         });
         input.addEventListener('change', updatePrice());
@@ -34,8 +34,8 @@ function lookBasket(){
     //calcul prix total
 function updatePrice(){
     let total = 0;
-    panier.forEach((pn) => {
-        total += pn.Article.getPrice() * pn.getQuantity();
+    panier.forEach((pan) => {
+        total += pan.Article.getPrice() * pan.getQuantity();
     });
     total = total.toFixed(2);
     document.getElementById('totalPrice').innerText = total;

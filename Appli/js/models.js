@@ -1,4 +1,5 @@
-//contient toutes les class
+//contient toutes les class en Poo
+//Article
 class Article {
     constructor(id, title, brand, largeDescription, price, category){
         this.id = id;
@@ -8,7 +9,6 @@ class Article {
         this.price = price;
         this.category = category;
     }
-
     getId(){
         return this.id;
     }
@@ -28,8 +28,9 @@ class Article {
         return this.price;
     }
 }
-//j'utilise "var" volontairement car il porte partout.
+
 //catégories
+//j'utilise "var" volontairement car il porte partout.
 var category = [];
 var idCategory = 1;
 class Category {
@@ -38,11 +39,9 @@ class Category {
         this.nom = nom;
         this.Articles = [];
     }
-
     addArticle(Article){
         this.Articles.push(Article);
     }
-
     getId(){
         return this.id;
     }
@@ -64,7 +63,6 @@ class Panier{
         this.Article = Article;
         this.quantity = 1;
     }
-
     getId(){
         return this.idElement;
     }
